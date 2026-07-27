@@ -1,83 +1,103 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jasa Wisata Kota Bontang | Bontang Marine Trip</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome & Google Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body class="bg-[#0f172a] text-white">
+<body class="bg-[#0f172a] text-white flex flex-col min-h-screen">
 
     <!-- HEADER -->
     <header class="bg-white text-slate-800 shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
             
             <!-- LOGO UTAMA -->
             <div class="flex items-center gap-3">
                 <a href="#" class="flex items-center">
-                    <!-- Ganti src di bawah ini dengan lokasi file logo kamu -->
-                    <img src="assets/img/logo.jpeg" alt="Bontang Marine Trip" class="h-12 w-auto object-contain onerror-fallback" onerror="this.style.display='none'; document.getElementById('text-logo-fallback').style.display='flex';">
+                    <img src="assets/img/logo.jpeg" alt="Bontang Marine Trip" class="h-12 w-auto object-contain" onerror="this.style.display='none'; document.getElementById('text-logo-fallback').style.display='flex';">
                     
-                    <!-- Text cadangan jika file gambar logo di atas tidak ditemukan/error -->
-                    <div id="text-logo-fallback" class="hidden w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-[10px] text-center leading-tight p-1">
+                    <div id="text-logo-fallback" class="hidden w-12 h-12 bg-blue-600 rounded-lg items-center justify-center text-white font-bold text-[10px] text-center leading-tight p-1">
                         Bontang<br>Marine<br>Trip
                     </div>
                 </a>
             </div>
 
+            <!-- DESKTOP NAV -->
             <nav class="hidden lg:flex space-x-6 text-[14px] font-medium text-slate-600">
                 <a href="#" class="text-blue-600 hover:text-blue-700">Home</a>
                 <a href="#destinasi" class="hover:text-blue-600 transition-colors">Paket Wisata</a>
                 <a href="#destinasi" class="hover:text-blue-600 transition-colors">Destinasi</a>
-                <a href="#" class="hover:text-blue-600 transition-colors">Promo</a>
+                <a href="#promo" class="hover:text-blue-600 transition-colors">Promo</a>
             </nav>
 
-            <div class="flex items-center gap-4">
+            <!-- RIGHT HEADER CTAs -->
+            <div class="flex items-center gap-3">
                 <div class="flex items-center gap-1 text-xs border border-slate-200 rounded-lg px-2 py-1 bg-slate-50 font-medium text-slate-600">
-                    <span class="text-blue-600 cursor-pointer font-semibold">ID</span>
+                    <span class="text-blue-600 font-semibold cursor-pointer">ID</span>
                     <span class="text-slate-300">|</span>
                     <span class="hover:text-blue-600 cursor-pointer">EN</span>
                 </div>
-                <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20ingin%20tanya-tanya%20mengenai%20layanan%20paket%20wisata." target="_blank" class="bg-[#1d4ed8] hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-md">
+                <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20ingin%20tanya-tanya%20mengenai%20layanan%20paket%20wisata." target="_blank" class="hidden sm:inline-block bg-[#1d4ed8] hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-md">
                     Pesan Sekarang
                 </a>
+                
+                <!-- MOBILE MENU BUTTON -->
+                <button id="menu-btn" class="lg:hidden text-slate-700 hover:text-blue-600 focus:outline-none p-1">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
             </div>
+        </div>
+
+        <!-- MOBILE NAV DROPDOWN -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-50 border-t border-slate-100 px-6 py-4 space-y-3 font-medium text-slate-700 text-sm">
+            <a href="#" class="block text-blue-600">Home</a>
+            <a href="#destinasi" class="block hover:text-blue-600">Paket Wisata</a>
+            <a href="#destinasi" class="block hover:text-blue-600">Destinasi</a>
+            <a href="#promo" class="block hover:text-blue-600">Promo</a>
+            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20ingin%20tanya-tanya%20mengenai%20layanan%20paket%20wisata." target="_blank" class="inline-block w-full text-center bg-[#1d4ed8] text-white py-2 rounded-full font-semibold">
+                Pesan Sekarang
+            </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="relative min-h-[85vh] flex flex-col justify-center items-center bg-blue-950 px-6 py-20 overflow-hidden">
         
-        <div class="text-center max-w-4xl mx-auto z-10 mb-12">
+        <div class="text-center max-w-4xl mx-auto z-10 mb-10">
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight uppercase">
                 BONTANG MARINE TRIP
             </h1>
             <p class="text-blue-200 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
-                "Nikmati keseruan trip anda dan perjalanan yang menyenangkan wisata di kota bontang"
+                "Nikmati keseruan trip Anda dan perjalanan wisata yang tak terlupakan di Kota Bontang."
             </p>
         </div>
 
         <!-- SEARCH / FILTER BAR -->
-        <div class="w-full max-w-5xl bg-blue-900/40 border border-blue-800/60 p-4 rounded-3xl shadow-2xl backdrop-blur-md z-10">
+        <div class="w-full max-w-5xl bg-blue-900/40 border border-blue-800/60 p-4 md:p-6 rounded-3xl shadow-2xl backdrop-blur-md z-10">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
                 
-                <div class="px-4 py-2 flex flex-col justify-center">
-                    <span class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Pilih Layanan</span>
+                <div class="px-2 py-1 flex flex-col justify-center">
+                    <label for="select-layanan" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Pilih Layanan</label>
                     <div class="relative">
-                        <select class="w-full bg-transparent text-white font-medium text-sm focus:outline-none appearance-none cursor-pointer pr-6">
-                            <option class="bg-blue-950" value="">Pilih Layanan</option>
-                            <option class="bg-blue-950" value="paket-1">Beras Basah Trip - PAKET 1</option>
-                            <option class="bg-blue-950" value="paket-2">Camping Beras Basah - PAKET 2</option>
-                            <option class="bg-blue-950" value="paket-3">One Day Trip - PAKET 3</option>
-                            <option class="bg-blue-950" value="paket-4">Paket Hemat - PAKET 4</option>
+                        <select id="select-layanan" class="w-full bg-transparent text-white font-medium text-sm focus:outline-none appearance-none cursor-pointer pr-6">
+                            <option class="bg-blue-950 text-white" value="">Semua Layanan</option>
+                            <option class="bg-blue-950 text-white" value="PAKET 1 - Premium Trip">Beras Basah Trip - PAKET 1</option>
+                            <option class="bg-blue-950 text-white" value="PAKET 2 - Camping Beras Basah">Camping Beras Basah - PAKET 2</option>
+                            <option class="bg-blue-950 text-white" value="PAKET 3 - One Day Trip">One Day Trip - PAKET 3</option>
+                            <option class="bg-blue-950 text-white" value="PAKET 4 - Paket Hemat">Paket Hemat - PAKET 4</option>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-slate-300">
                             <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -85,23 +105,23 @@
                     </div>
                 </div>
 
-                <div class="px-4 py-2 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
-                    <span class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Tanggal</span>
+                <div class="px-2 py-1 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
+                    <label for="input-tanggal" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Tanggal</label>
                     <div class="flex items-center justify-between text-sm text-slate-200">
-                        <input type="date" value="2026-07-16" class="bg-transparent text-white focus:outline-none w-full font-medium cursor-pointer [color-scheme:dark]" />
+                        <input id="input-tanggal" type="date" class="bg-transparent text-white focus:outline-none w-full font-medium cursor-pointer [color-scheme:dark]" />
                     </div>
                 </div>
 
-                <div class="px-4 py-2 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
-                    <span class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Jumlah Orang</span>
-                    <input type="number" placeholder="Contoh: 2" class="bg-transparent text-white text-sm focus:outline-none w-full font-medium placeholder-blue-300" />
+                <div class="px-2 py-1 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
+                    <label for="input-pax" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Jumlah Orang</label>
+                    <input id="input-pax" type="number" min="1" placeholder="Contoh: 2" class="bg-transparent text-white text-sm focus:outline-none w-full font-medium placeholder-blue-300/60" />
                 </div>
 
                 <div class="p-1">
-                    <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20ingin%20cek%20ketersediaan%20jadwal%20wisata%20ke%20Pulau%20Beras%20Basah." target="_blank" class="w-full bg-[#3b82f6] hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-2xl flex items-center justify-center gap-2 transition duration-300 shadow-lg text-center shadow-blue-500/20">
+                    <button onclick="cariJadwalWA()" class="w-full bg-[#3b82f6] hover:bg-blue-600 text-white font-semibold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 transition duration-300 shadow-lg text-center shadow-blue-500/20">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Cari Sekarang</span>
-                    </a>
+                    </button>
                 </div>
 
             </div>
@@ -109,23 +129,23 @@
 
         <!-- FLOATING BADGES -->
         <div class="absolute bottom-6 right-6 z-20">
-            <div class="bg-[#0f2e22] text-[#4ade80] border border-[#166534] px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold shadow-lg">
+            <div class="bg-[#0f2e22] text-[#4ade80] border border-[#166534] px-4 py-2 rounded-full flex items-center gap-2 text-xs md:text-sm font-semibold shadow-lg">
                 <i class="fa-solid fa-leaf"></i>
                 <span>Eco Tourism</span>
             </div>
         </div>
 
         <div class="absolute bottom-6 left-6 z-20">
-            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20butuh%20informasi%20bantuan%20mengenai%20trip%20di%20Bontang." target="_blank" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 shadow-lg transition duration-300">
-                <i class="fa-solid fa-info text-lg"></i>
+            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20butuh%20informasi%20bantuan%20mengenai%20trip%20di%20Bontang." target="_blank" title="Bantuan CS" class="w-11 h-11 md:w-12 md:h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 shadow-lg transition duration-300">
+                <i class="fa-solid fa-headset text-lg"></i>
             </a>
         </div>
 
     </section>
 
     <!-- DESTINASI & PAKET -->
-    <section id="destinasi" class="bg-white text-slate-800 py-20 px-6">
-        <div class="container mx-auto max-w-6xl">
+    <section id="destinasi" class="bg-slate-50 text-slate-800 py-20 px-4 md:px-6">
+        <div class="container mx-auto max-w-7xl">
             
             <div class="text-center mb-14">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">
@@ -136,31 +156,27 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- GRID KARTU (EQUAL HEIGHT HEIGHT DESIGN) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                 
                 <!-- PAKET 1 -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-200/80 p-3 flex flex-col justify-between">
                     <div>
-                        <div class="relative rounded-[1.8rem] overflow-hidden h-48">
+                        <div class="relative rounded-[1.5rem] overflow-hidden h-48 bg-slate-100">
                             <img src="assets/img/Foto beras basah 1.jpeg" alt="PAKET 1" class="w-full h-full object-cover">
                         </div>
-                        <div class="p-4 pb-0">
-                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET. 1</h3>
-                            <p class="text-blue-600 font-bold text-sm mb-3">PREMIUM TRIP</p>
+                        <div class="p-4">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET 1</h3>
+                            <p class="text-blue-600 font-bold text-xs uppercase mb-3">PREMIUM TRIP</p>
                             
-                            <div class="border-t border-slate-100 pt-3 mb-4">
-                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Includ):</p>
+                            <div class="border-t border-slate-100 pt-3">
+                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Included):</p>
                                 <ul class="text-slate-600 text-xs space-y-2 font-medium">
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ship text-blue-500 w-4 text-center"></i> Kapal PP</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ticket text-amber-500 w-4 text-center"></i> Tiket Masuk</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-user-tie text-indigo-500 w-4 text-center"></i> Tour Guide</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-life-ring text-orange-500 w-4 text-center"></i> Life Jacket</li>
-                                    <li class="flex items-center gap-2">
-                                        <span class="w-4 flex justify-center">
-                                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%2314b8a6'><path d='M448 256c0-106-86-192-192-192V0C397.4 0 512 114.6 512 256c0 23.4-3.1 46.1-9 67.7L448 256z'/></svg>" class="w-3.5 h-3.5">
-                                        </span> 
-                                        Alat Snorkling
-                                    </li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-water-ladder text-teal-500 w-4 text-center"></i> Alat Snorkeling</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-cookie-bite text-amber-600 w-4 text-center"></i> Snack Pagi</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-bottle-water text-sky-500 w-4 text-center"></i> Air Mineral</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-camera-retro text-violet-500 w-4 text-center"></i> Dokumentasi Premium</li>
@@ -168,40 +184,35 @@
                                     <li class="pl-6 flex items-center gap-2 text-slate-500 text-[11px]"><i class="fa-solid fa-fish text-teal-500 text-[10px]"></i> Underwater</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-house-chimney text-emerald-500 w-4 text-center"></i> Pondok Pasilan</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-umbrella-beach text-amber-500 w-4 text-center"></i> Pulau Segajah</li>
-                                    <li class="flex items-center gap-2">
-                                        <span class="w-4 flex justify-center">
-                                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%230284c7'><path d='M384 256c0-42.4-18-80.6-46.7-107.3L384 48H336l-32.9 76.8C288.7 121.2 272.7 120 256 120s-32.7 1.2-47.1 4.8L176 48H128l46.7 100.7C146 175.4 128 213.6 128 256c0 57.4 34.1 106.8 83 128.8L160 512h48l40.3-100.7c2.5 .3 5.1 .7 7.7 .7s5.2-.3 7.7-.7L304 512h48l-51-127.2c48.9-22 83-71.4 83-128.8z'/></svg>" class="w-3.5 h-3.5">
-                                        </span>
-                                        Beras Basah
-                                    </li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-island-tropical text-sky-600 w-4 text-center"></i> Beras Basah</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="p-4 pt-0">
-                        <div class="mb-4">
-                            <span class="text-2xl font-black text-blue-600">280.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
+                    <div class="p-4 pt-2 mt-auto">
+                        <div class="mb-3">
+                            <span class="text-2xl font-black text-blue-600">Rp 280.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
                         </div>
-                        <div class="grid grid-cols-3 gap-3">
-                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
-                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%201%20-%20PREMIUM%20TRIP*%20dengan%20harga%20*Rp%20280.000%20%2F%20pax*.%0A%0A*Fasilitas%20Termasuk%3A*%0A%F0%9F%9B%A5%EF%B8%8F%20Kapal%20PP%0A%F0%9F%8E%AB%20Tiket%20Masuk%0A%F0%9F%A7%91%E2%80%8D%F0%9F%92%BC%20Tour%20Guide%0A%F0%9F%A6%BA%20Life%20Jacket%0A%F0%9F%A5%BF%20Alat%20Snorkling%0A%F0%9F%A5%AA%20Snack%20Pagi%0A%F0%9F%A5%A4%20Air%20Mineral%0A%F0%9F%93%B8%20Dokumentasi%20Premium%20(%F0%9F%9B%B8%20Video%20Drone%20%26%20%F0%9F%90%9F%20Underwater)%0A%F0%9F%8C%DD%EF%B8%8F%20Destinasi%3A%20Pondok%20Pasilan%2C%20Pulau%20Segajah%2C%20Beras%20Basah.%0A%0AMohon%20informasi%20ketersediaan%20slot%20dan%20langkah%20selanjutnya." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2 rounded-xl text-xs hover:bg-slate-50 transition flex items-center justify-center">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%201%20-%20PREMIUM%20TRIP*%20dengan%20harga%20*Rp%20280.000%20%2F%20pax*." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2 rounded-xl text-xs transition shadow-sm flex items-center justify-center">Booking</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- PAKET 2 -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-200/80 p-3 flex flex-col justify-between">
                     <div>
-                        <div class="relative rounded-[1.8rem] overflow-hidden h-48">
+                        <div class="relative rounded-[1.5rem] overflow-hidden h-48 bg-slate-100">
                             <img src="assets/img/WhatsApp Image 2026-07-16 at 23.03.45.jpeg" alt="PAKET 2" class="w-full h-full object-cover">
                         </div>
-                        <div class="p-4 pb-0">
-                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET. 2</h3>
-                            <p class="text-blue-600 font-bold text-sm mb-3">CAMPING BERAS BASAH</p>
+                        <div class="p-4">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET 2</h3>
+                            <p class="text-blue-600 font-bold text-xs uppercase mb-3">CAMPING BERAS BASAH</p>
                             
-                            <div class="border-t border-slate-100 pt-3 mb-4">
-                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Includ):</p>
+                            <div class="border-t border-slate-100 pt-3">
+                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Included):</p>
                                 <ul class="text-slate-600 text-xs space-y-2 font-medium">
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ship text-blue-500 w-4 text-center"></i> Kapal PP</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ticket text-amber-500 w-4 text-center"></i> Tiket Masuk</li>
@@ -210,41 +221,36 @@
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-utensils text-rose-500 w-4 text-center"></i> Makan 2 Kali</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-violet-500 w-4 text-center"></i> Dokumentasi</li>
                                     <li class="pl-6 flex items-center gap-2 text-slate-500 text-[11px]"><i class="fa-solid fa-fish text-teal-500 text-[10px]"></i> Underwater</li>
-                                    <li class="flex items-center gap-2">
-                                        <span class="w-4 flex justify-center">
-                                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%2314b8a6'><path d='M448 256c0-106-86-192-192-192V0C397.4 0 512 114.6 512 256c0 23.4-3.1 46.1-9 67.7L448 256z'/></svg>" class="w-3.5 h-3.5">
-                                        </span>
-                                        Alat Snorkling
-                                    </li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-water-ladder text-teal-500 w-4 text-center"></i> Alat Snorkeling</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-life-ring text-orange-500 w-4 text-center"></i> Life Jacket</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="p-4 pt-0">
-                        <div class="mb-4">
-                            <span class="text-2xl font-black text-blue-600">350.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
+                    <div class="p-4 pt-2 mt-auto">
+                        <div class="mb-3">
+                            <span class="text-2xl font-black text-blue-600">Rp 350.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
                         </div>
-                        <div class="grid grid-cols-3 gap-3">
-                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
-                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%202%20-%20CAMPING%20BERAS%20BASAH*%20dengan%20harga%20*Rp%20350.000%20%2F%20pax*.%0A%0A*Fasilitas%20Termasuk%3A*%0A%F0%9F%9B%A5%EF%B8%8F%20Kapal%20PP%0A%F0%9F%8E%AB%20Tiket%20Masuk%0A%F0%9F%A7%91%E2%80%8D%F0%9F%92%BC%20Tour%20Guide%0A%F0%9F%8F%95%EF%B8%8F%20Tenda%20Camping%0A%F0%9F%8D%BD%20Makan%202%20Kali%0A%F0%9F%93%B8%20Dokumentasi%20%26%20%F0%9F%90%9F%20Underwater%0A%F0%9F%A%BF%20Alat%20Snorkling%0A%F0%9F%A6%BA%20Life%20Jacket%0A%0AMohon%20informasi%20ketersediaan%20slot%20dan%20langkah%20selanjutnya." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2 rounded-xl text-xs hover:bg-slate-50 transition flex items-center justify-center">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%202%20-%20CAMPING%20BERAS%20BASAH*%20dengan%20harga%20*Rp%20350.000%20%2F%20pax*." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2 rounded-xl text-xs transition shadow-sm flex items-center justify-center">Booking</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- PAKET 3 -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-200/80 p-3 flex flex-col justify-between">
                     <div>
-                        <div class="relative rounded-[1.8rem] overflow-hidden h-48">
+                        <div class="relative rounded-[1.5rem] overflow-hidden h-48 bg-slate-100">
                             <img src="assets/img/Kuntul perak.jpg" alt="PAKET 3" class="w-full h-full object-cover">
                         </div>
-                        <div class="p-4 pb-0">
-                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET. 3</h3>
-                            <p class="text-blue-600 font-bold text-sm mb-3">ONE DAY TRIP</p>
+                        <div class="p-4">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET 3</h3>
+                            <p class="text-blue-600 font-bold text-xs uppercase mb-3">ONE DAY TRIP</p>
                             
-                            <div class="border-t border-slate-100 pt-3 mb-4">
-                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Includ):</p>
+                            <div class="border-t border-slate-100 pt-3">
+                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Included):</p>
                                 <ul class="text-slate-600 text-xs space-y-2 font-medium">
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ship text-blue-500 w-4 text-center"></i> Kapal PP</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ticket text-amber-500 w-4 text-center"></i> Tiket Masuk</li>
@@ -254,71 +260,60 @@
                                     <li class="pl-6 flex items-center gap-2 text-slate-500 text-[11px]"><i class="fa-solid fa-helicopter text-cyan-500 text-[10px]"></i> Video Drone</li>
                                     <li class="pl-6 flex items-center gap-2 text-slate-500 text-[11px]"><i class="fa-solid fa-fish text-teal-500 text-[10px]"></i> Underwater</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-life-ring text-orange-500 w-4 text-center"></i> Life Jacket</li>
-                                    <li class="flex items-center gap-2">
-                                        <span class="w-4 flex justify-center">
-                                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%2314b8a6'><path d='M448 256c0-106-86-192-192-192V0C397.4 0 512 114.6 512 256c0 23.4-3.1 46.1-9 67.7L448 256z'/></svg>" class="w-3.5 h-3.5">
-                                        </span>
-                                        Alat Snorkling
-                                    </li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-water-ladder text-teal-500 w-4 text-center"></i> Alat Snorkeling</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-couch text-emerald-500 w-4 text-center"></i> Tempat Istirahat</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="p-4 pt-0">
-                        <div class="mb-4">
-                            <span class="text-2xl font-black text-blue-600">220.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
+                    <div class="p-4 pt-2 mt-auto">
+                        <div class="mb-3">
+                            <span class="text-2xl font-black text-blue-600">Rp 220.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
                         </div>
-                        <div class="grid grid-cols-3 gap-3">
-                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
-                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%203%20-%20ONE%20DAY%20TRIP*%20dengan%20harga%20*Rp%20220.000%20%2F%20pax*.%0A%0A*Fasilitas%20Termasuk%3A*%0A%F0%9F%9B%A5%EF%B8%8F%20Kapal%20PP%0A%F0%9F%8E%AB%20Tiket%20Masuk%0A%F0%9F%A7%91%E2%80%8D%F0%9F%92%BC%20Tour%20Guide%0A%F0%9F%A%A4%20Air%20Mineral%0A%F0%9F%93%B8%20Dokumentasi%20Premium%20(%F0%9F%9B%B8%20Video%20Drone%20%26%20%F0%9F%90%9F%20Underwater)%0A%F0%9F%A6%BA%20Life%20Jacket%0A%F0%9F%A%BF%20Alat%20Snorkling%0A%F0%9F%9B%8B%EF%B8%8F%20Tempat%20Istirahat%0A%0AMohon%20informasi%20ketersediaan%20slot%20dan%20langkah%20selanjutnya." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2 rounded-xl text-xs hover:bg-slate-50 transition flex items-center justify-center">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%203%20-%20ONE%20DAY%20TRIP*%20dengan%20harga%20*Rp%20220.000%20%2F%20pax*." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2 rounded-xl text-xs transition shadow-sm flex items-center justify-center">Booking</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- PAKET 4 (PAKET HEMAT) -->
-                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-200/80 p-3 flex flex-col justify-between">
                     <div>
-                        <div class="relative rounded-[1.8rem] overflow-hidden h-48 bg-slate-100 flex items-center justify-center text-slate-400">
-                            <!-- Placeholder Gambar jika belum ada aset fotonya -->
+                        <div class="relative rounded-[1.5rem] overflow-hidden h-48 bg-slate-100 flex items-center justify-center text-slate-400">
                             <i class="fa-solid fa-umbrella-beach text-5xl text-blue-200"></i>
                         </div>
-                        <div class="p-4 pb-0">
-                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET. 4</h3>
-                            <p class="text-blue-600 font-bold text-sm mb-3">PAKET HEMAT</p>
+                        <div class="p-4">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight">PAKET 4</h3>
+                            <p class="text-blue-600 font-bold text-xs uppercase mb-3">PAKET HEMAT</p>
                             
-                            <div class="border-t border-slate-100 pt-3 mb-4">
-                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Includ):</p>
+                            <div class="border-t border-slate-100 pt-3">
+                                <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk (Included):</p>
                                 <ul class="text-slate-600 text-xs space-y-2 font-medium">
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ship text-blue-500 w-4 text-center"></i> Kapal PP</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-ticket text-amber-500 w-4 text-center"></i> Tiket Masuk</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-user-check text-indigo-500 w-4 text-center"></i> Pemandu Lokal</li>
                                     <li class="flex items-center gap-2"><i class="fa-solid fa-camera text-violet-500 w-4 text-center"></i> Dokumentasi</li>
                                     <li class="pl-6 flex items-center gap-2 text-slate-500 text-[11px]"><i class="fa-solid fa-fish text-teal-500 text-[10px]"></i> Underwater</li>
-                                    <li class="flex items-center gap-2">
-                                        <span class="w-4 flex justify-center">
-                                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%2314b8a6'><path d='M448 256c0-106-86-192-192-192V0C397.4 0 512 114.6 512 256c0 23.4-3.1 46.1-9 67.7L448 256z'/></svg>" class="w-3.5 h-3.5">
-                                        </span>
-                                        Alat Snorkling
-                                    </li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-water-ladder text-teal-500 w-4 text-center"></i> Alat Snorkeling</li>
                                 </ul>
                                 
                                 <div class="mt-4 pt-3 border-t border-dashed border-slate-200 text-[11px] text-slate-500">
                                     <i class="fa-solid fa-location-dot text-red-500 mr-1"></i> <strong>Meeting Point:</strong><br>
-                                    <span class="pl-4 block text-slate-600">Pelabuhan Tanjung Laut Indah</span>
+                                    <span class="pl-4 block text-slate-600 font-medium">Pelabuhan Tanjung Laut Indah</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="p-4 pt-0">
-                        <div class="mb-4">
-                            <span class="text-2xl font-black text-blue-600">100.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
+                    <div class="p-4 pt-2 mt-auto">
+                        <div class="mb-3">
+                            <span class="text-2xl font-black text-blue-600">Rp 100.000 <span class="text-xs text-slate-500 font-normal">/pax</span></span>
                         </div>
-                        <div class="grid grid-cols-3 gap-3">
-                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
-                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%204%20-%20PAKET%20HEMAT*%20dengan%20harga%20*Rp%20100.000%20%2F%20pax*.%0A%0A*Fasilitas%20Termasuk%3A*%0A%F0%9F%9B%A5%EF%B8%8F%20Kapal%20PP%0A%F0%9F%8E%AB%20Tiket%20Masuk%0A%F0%9F%A7%91%20Pemandu%20Lokal%0A%F0%9F%93%B8%20Dokumentasi%20(%F0%9F%90%9F%20Underwater)%0A%F0%9F%A%BF%20Alat%20Snorkling%0A%0A*📍%20Meeting%20Point%3A*%20Pelabuhan%20Tanjung%20Laut%20Indah.%0A%0AMohon%20informasi%20ketersediaan%20slot%20dan%20langkah%20selanjutnya." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        <div class="grid grid-cols-3 gap-2">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2 rounded-xl text-xs hover:bg-slate-50 transition flex items-center justify-center">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20tertarik%20untuk%20booking%20*PAKET%204%20-%20PAKET%20HEMAT*%20dengan%20harga%20*Rp%20100.000%20%2F%20pax*." target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2 rounded-xl text-xs transition shadow-sm flex items-center justify-center">Booking</a>
                         </div>
                     </div>
                 </div>
@@ -327,5 +322,32 @@
         </div>
     </section>
 
+    <!-- FOOTER SIMPLE -->
+    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-xs border-t border-slate-800 mt-auto">
+        <p>&copy; 2026 Bontang Marine Trip. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT KUSTOM -->
+    <script>
+        // Toggle Navigasi Mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Integrasi Pencarian ke WhatsApp
+        function cariJadwalWA() {
+            const layanan = document.getElementById('select-layanan').value || "Belum dipilih";
+            const tanggal = document.getElementById('input-tanggal').value || "Belum ditentukan";
+            const pax = document.getElementById('input-pax').value || "1";
+
+            const nomorWA = "6285250377318";
+            const pesan = `Halo Bontang Marine Trip, saya ingin cek ketersediaan jadwal wisata dengan rincian berikut:%0A%0A- *Layanan/Paket:* ${encodeURIComponent(layanan)}%0A- *Rencana Tanggal:* ${encodeURIComponent(tanggal)}%0A- *Jumlah Peserta:* ${encodeURIComponent(pax)} Orang%0A%0AMohon informasi ketersediaan slotnya. Terima kasih!`;
+
+            window.open(`https://api.whatsapp.com/send?phone=${nomorWA}&text=${pesan}`, '_blank');
+        }
+    </script>
 </body>
 </html>
