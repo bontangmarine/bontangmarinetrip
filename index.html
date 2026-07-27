@@ -323,5 +323,74 @@
         </div>
     </section>
 
+    <!-- ==========================================================
+         PERBAIKAN LINK WHATSAPP UNTUK KOMPATIBILITAS iOS SAFARI
+         ==========================================================
+         Script ini secara OTOMATIS:
+         1. Mengambil semua link <a href="https://api.whatsapp.com/send...">
+            yang sudah ada di atas (tidak perlu mengubah teks/emoji manual,
+            sehingga tidak ada risiko salah encode).
+         2. Mendekode teks pesan yang sudah ter-encode, lalu meng-encode
+            ULANG dengan encodeURIComponent() bawaan browser — ini adalah
+            cara paling aman & terjamin valid untuk emoji/karakter khusus
+            di semua browser (WebKit iOS Safari maupun Chrome Android).
+         3. Mengubah domain dari api.whatsapp.com/send -> wa.me
+            (wa.me adalah Universal Link resmi WhatsApp yang paling
+            reliable untuk handoff ke App di iOS).
+         4. Menghapus atribut target="_blank" KHUSUS untuk link WhatsApp.
+            Ini kunci utamanya: di iOS Safari, target="_blank" membuka
+            tab kosong baru dulu sebelum mencoba membuka App WhatsApp,
+            dan iOS sering memblokir proses "app-switch" ini karena
+            dianggap terjadi di luar konteks klik langsung pengguna.
+            Tanpa target="_blank", link akan langsung memicu handoff
+            ke App WhatsApp di tab yang sama — ini yang bekerja stabil
+            di iOS maupun Android.
+         Desain, kelas CSS, dan ikon tombol TIDAK diubah sama sekali.
+    -->
+    <script>
+    (function () {
+        function convertToWaLink(oldHref) {
+            try {
+                var url = new URL(oldHref, window.location.href);
+                var phone = url.searchParams.get('phone');
+                var text = url.searchParams.get('text') || '';
+                if (!phone) return oldHref; // bukan link WA yang dikenali, biarkan apa adanya
+
+                // URLSearchParams.get() otomatis men-decode %xx & emoji dengan benar.
+                // encodeURIComponent() lalu meng-encode ulang dengan valid & konsisten
+                // di semua browser, termasuk WebKit (Safari iOS).
+                var waUrl = 'https://wa.me/' + phone;
+                if (text) {
+                    waUrl += '?text=' + encodeURIComponent(text);
+                }
+                return waUrl;
+            } catch (e) {
+                return oldHref;
+            }
+        }
+
+        function fixWhatsappLinks() {
+            var links = document.querySelectorAll('a[href*="api.whatsapp.com/send"], a[href*="wa.me"]');
+            links.forEach(function (link) {
+                var href = link.getAttribute('href');
+                if (!href) return;
+
+                var newHref = convertToWaLink(href);
+                link.setAttribute('href', newHref);
+
+                // Kunci fix iOS: jangan buka tab baru untuk link WhatsApp.
+                link.removeAttribute('target');
+                link.setAttribute('rel', 'noopener');
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fixWhatsappLinks);
+        } else {
+            fixWhatsappLinks();
+        }
+    })();
+    </script>
+
 </body>
 </html>
