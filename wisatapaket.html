@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Wisata Kota Bontang | Healing in Bontang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-[#0b0c10] text-white">
+
+    <header class="bg-white text-slate-800 shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#1d4ed8] rounded-lg flex items-center justify-center text-white font-bold text-xs text-center leading-none">
+                    Healing<br>Bontang
+                </div>
+            </div>
+
+            <div class="hidden lg:flex space-x-6 text-[14px] font-medium text-slate-600">
+                <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Paket Wisata</a>
+                <a href="#destinasi" class="text-blue-600 hover:text-blue-700">Destinasi</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Promo</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Tentang Kami</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Unit Kapal</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Testimoni</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Blog</a>
+                <a href="#" class="hover:text-blue-600 transition-colors">Kontak</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1 text-xs border border-slate-200 rounded-lg px-2 py-1 bg-slate-50 font-medium text-slate-600">
+                    <span class="text-blue-600 cursor-pointer font-semibold">ID</span>
+                    <span class="text-slate-300">|</span>
+                    <span class="hover:text-blue-600 cursor-pointer">EN</span>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20paket%20wisata" target="_blank" class="bg-[#1d4ed8] hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-semibold transition shadow-md">
+                    Pesan Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative min-h-[85vh] flex flex-col justify-center items-center bg-[#050505] px-6 py-20 overflow-hidden">
+        
+        <div class="text-center max-w-4xl mx-auto z-10 mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                Jelajahi Indahnya Bontang <br class="hidden md:block"> Bersama Kami
+            </h1>
+            <p class="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-light">
+                "Rasakan ketenangan alam dan keindahan laut Bontang yang memikat. <br class="hidden md:block">
+                Nikmati pengalaman wisata yang aman, berkesan, dan tak terlupakan di setiap perjalanan"
+            </p>
+        </div>
+
+        <div class="w-full max-w-5xl bg-[#111317]/90 border border-slate-800/80 p-4 rounded-3xl shadow-2xl backdrop-blur-md z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                
+                <div class="px-4 py-2 flex flex-col justify-center">
+                    <span class="text-[10px] text-blue-500 font-bold tracking-wider uppercase mb-1">Pilih Layanan</span>
+                    <div class="relative">
+                        <select class="w-full bg-transparent text-white font-medium text-sm focus:outline-none appearance-none cursor-pointer">
+                            <option class="bg-[#111317]" value="">Pilih Layanan</option>
+                            <option class="bg-[#111317]" value="paket1">Paket 1 (3 Destinasi)</option>
+                            <option class="bg-[#111317]" value="paket2">Paket 2 (Camping Beras Basah)</option>
+                            <option class="bg-[#111317]" value="paket3">Paket 3 (1 Destinasi Beras Basah)</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-4 py-2 border-t md:border-t-0 md:border-l border-slate-800 flex flex-col justify-center">
+                    <span class="text-[10px] text-blue-500 font-bold tracking-wider uppercase mb-1">Tanggal</span>
+                    <div class="flex items-center justify-between text-sm text-slate-200">
+                        <input type="date" value="2026-07-14" class="bg-transparent text-white focus:outline-none w-full font-medium cursor-pointer" />
+                    </div>
+                </div>
+
+                <div class="px-4 py-2 border-t md:border-t-0 md:border-l border-slate-800 flex flex-col justify-center">
+                    <span class="text-[10px] text-blue-500 font-bold tracking-wider uppercase mb-1">Jumlah Orang</span>
+                    <input type="number" placeholder="Contoh: 2" class="bg-transparent text-white text-sm focus:outline-none w-full font-medium placeholder-slate-600" />
+                </div>
+
+                <div class="p-1">
+                    <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%2C%20saya%20ingin%20mencari%20jadwal%20trip%20ke%20Beras%20Basah" target="_blank" class="w-full bg-[#3b82f6] hover:bg-blue-600 text-white font-semibold py-4 px-6 rounded-2xl flex items-center justify-center gap-2 transition duration-300 shadow-lg shadow-blue-500/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Cari Sekarang</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 right-6 z-20">
+            <div class="bg-[#0f2e22] text-[#4ade80] border border-[#166534] px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold shadow-lg">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Eco Tourism</span>
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 left-6 z-20">
+            <button class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 shadow-lg transition duration-300">
+                <i class="fa-solid fa-info text-lg"></i>
+            </button>
+        </div>
+
+    </section>
+
+    <section id="destinasi" class="bg-white text-slate-800 py-20 px-6">
+        <div class="container mx-auto max-w-6xl">
+            
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">
+                    Paket Wisata <span class="text-blue-600">Beras Basah Trip</span>
+                </h2>
+                <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+                    Pilih petualangan terbaik dan ciptakan momen tidak terlupakan di Kota Bontang.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-[1.8rem] overflow-hidden h-56">
+                            <img src="assets/img/trip.jpeg" alt="Beras Basah Trip Paket 1" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">Best Choice</span>
+                        </div>
+                        <div class="p-5 pb-0">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight mb-1">PAKET. 1</h3>
+                            <p class="text-blue-600 font-bold text-sm mb-4">3 DESTINASI</p>
+                            
+                            <div class="border-t border-slate-100 pt-3 mb-4">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk:</p>
+                                <ul class="text-slate-600 text-xs space-y-1.5 font-medium">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Kapal PP</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Includ HTM</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Life Jacket</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Tour Guide</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Makan Siang</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Air Mineral</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Full Dokumentasi</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Pondok Pasilan</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-blue-500"></i> Pasir Segajah & Beras Basah</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5 pt-0">
+                        <div class="mb-4">
+                            <span class="text-2xl font-black text-blue-600">280.000 <span class="text-xs text-slate-500 font-normal">/ pax</span></span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%2C%20saya%20ingin%20memesan%20Beras%20Basah%20Trip%20-%20PAKET%201%20(3%20Destinasi)" target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-[1.8rem] overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Beras Basah Trip Paket 2" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">Min. 10 Orang</span>
+                        </div>
+                        <div class="p-5 pb-0">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight mb-1">PAKET. 2</h3>
+                            <p class="text-blue-600 font-bold text-sm mb-4">CAMPING BERAS BASAH</p>
+                            
+                            <div class="border-t border-slate-100 pt-3 mb-4">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk:</p>
+                                <ul class="text-slate-600 text-xs space-y-1.5 font-medium">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Kapal PP</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Includ HTM</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Makan 2 Kali</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Air Mineral</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Dokumentasi</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Snorkling</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Tenda Camping</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Life Jacket</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Air Bilas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5 pt-0">
+                        <div class="mb-4">
+                            <span class="text-2xl font-black text-blue-600">350.000 <span class="text-xs text-slate-500 font-normal">/ pax</span></span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%2C%20saya%20ingin%20memesan%20Beras%20Basah%20Trip%20-%20PAKET%202%20(Camping%20Beras%20Basah)" target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-slate-100 p-3 flex flex-col justify-between">
+                    <div>
+                        <div class="relative rounded-[1.8rem] overflow-hidden h-56">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Beras Basah Trip Paket 3" class="w-full h-full object-cover">
+                            <span class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-sm">Super Hemat</span>
+                        </div>
+                        <div class="p-5 pb-0">
+                            <h3 class="text-xl font-extrabold text-slate-900 tracking-tight mb-1">PAKET. 3</h3>
+                            <p class="text-blue-600 font-bold text-sm mb-4">1 DESTINASI BERAS BASAH</p>
+                            
+                            <div class="border-t border-slate-100 pt-3 mb-4">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fasilitas Termasuk:</p>
+                                <ul class="text-slate-600 text-xs space-y-1.5 font-medium">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Kapal PP</li>
+                                      <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Air Minum</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Includ HTM</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Tour Guide</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Makan Siang</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Dokumentasi di Beras Basah</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Snorkling</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Life Jacket</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> Tempat Istirahat</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5 pt-0">
+                        <div class="mb-4">
+                            <span class="text-2xl font-black text-blue-600">220.000 <span class="text-xs text-slate-500 font-normal">/ pax</span></span>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3">
+                            <a href="#" class="border border-slate-200 text-slate-700 text-center font-semibold py-2.5 rounded-xl text-sm hover:bg-slate-50 transition">Detail</a>
+                            <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%2C%20saya%20ingin%20memesan%20Beras%20Basah%20Trip%20-%20PAKET%203%20(1%20Destinasi%20Beras%20Basah)" target="_blank" class="col-span-2 bg-[#1d4ed8] hover:bg-blue-700 text-white text-center font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">Booking</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
