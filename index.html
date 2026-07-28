@@ -71,52 +71,51 @@
 
         <!-- SEARCH / FILTER BAR -->
         <div class="w-full max-w-5xl bg-blue-900/40 border border-blue-800/60 p-4 rounded-3xl shadow-2xl backdrop-blur-md z-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-                
-                <!-- PILIH LAYANAN -->
-                <div class="px-3 py-2 flex flex-col justify-center">
-                    <label for="layanan-select" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Pilih Layanan</label>
-                    <div class="relative">
-                        <!-- Font-size: 16px (text-base) mencegah auto-zoom di iPhone -->
-                        <select id="layanan-select" class="w-full bg-transparent text-white font-medium text-base sm:text-sm focus:outline-none appearance-none cursor-pointer pr-6">
-                            <option class="bg-blue-950" value="">Pilih Layanan</option>
-                            <option class="bg-blue-950" value="paket-1">Beras Basah Trip - PAKET 1</option>
-                            <option class="bg-blue-950" value="paket-2">Camping Beras Basah - PAKET 2</option>
-                            <option class="bg-blue-950" value="paket-3">One Day Trip - PAKET 3</option>
-                            <option class="bg-blue-950" value="paket-4">Paket Hemat - PAKET 4</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-slate-300">
-                            <i class="fa-solid fa-chevron-down text-xs"></i>
-                        </div>
-                    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+        
+        <!-- PILIH LAYANAN -->
+        <div class="px-3 py-2 flex flex-col justify-center">
+            <label for="layanan-select" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Pilih Layanan</label>
+            <div class="relative">
+                <!-- Font-size: 16px (text-base) mencegah auto-zoom di iPhone -->
+                <select id="layanan-select" class="w-full bg-transparent text-white font-medium text-base sm:text-sm focus:outline-none appearance-none cursor-pointer pr-6">
+                    <option class="bg-blue-950" value="">Pilih Layanan</option>
+                    <option class="bg-blue-950" value="Beras Basah Trip - PAKET 1">Beras Basah Trip - PAKET 1</option>
+                    <option class="bg-blue-950" value="Camping Beras Basah - PAKET 2">Camping Beras Basah - PAKET 2</option>
+                    <option class="bg-blue-950" value="One Day Trip - PAKET 3">One Day Trip - PAKET 3</option>
+                    <option class="bg-blue-950" value="Paket Hemat - PAKET 4">Paket Hemat - PAKET 4</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center text-slate-300">
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
                 </div>
-
-                <!-- TANGGAL -->
-                <div class="px-3 py-2 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
-                    <label for="tanggal-input" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Tanggal</label>
-                    <div class="flex items-center justify-between text-base sm:text-sm text-slate-200">
-                        <!-- Font-size: 16px Mencegah auto-zoom di Safari iOS -->
-                        <input id="tanggal-input" type="date" value="2026-07-16" class="bg-transparent text-white focus:outline-none w-full font-medium cursor-pointer text-base sm:text-sm" />
-                    </div>
-                </div>
-
-                <!-- JUMLAH ORANG -->
-                <div class="px-3 py-2 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
-                    <label for="jumlah-orang" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Jumlah Orang</label>
-                    <input id="jumlah-orang" type="number" placeholder="Contoh: 2" class="bg-transparent text-white text-base sm:text-sm focus:outline-none w-full font-medium placeholder-blue-300" />
-                </div>
-
-                <!-- TOMBOL CARI -->
-                <div class="p-1">
-                    <a href="https://api.whatsapp.com/send?phone=6285250377318&text=Halo%20Bontang%20Marine%20Trip%2C%20saya%20ingin%20cek%20ketersediaan%20jadwal%20wisata%20ke%20Pulau%20Beras%20Basah." target="_blank" rel="noopener noreferrer" class="w-full bg-[#3b82f6] hover:bg-blue-600 text-white font-semibold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 transition duration-300 shadow-lg text-center shadow-blue-500/20 text-base sm:text-sm">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        <span>Cari Sekarang</span>
-                    </a>
-                </div>
-
             </div>
         </div>
 
+        <!-- TANGGAL -->
+        <div class="px-3 py-2 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
+            <label for="tanggal-input" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Tanggal</label>
+            <div class="flex items-center justify-between text-base sm:text-sm text-slate-200">
+                <!-- Font-size: 16px Mencegah auto-zoom di Safari iOS -->
+                <input id="tanggal-input" type="date" value="2026-07-16" class="bg-transparent text-white focus:outline-none w-full font-medium cursor-pointer text-base sm:text-sm" />
+            </div>
+        </div>
+
+        <!-- JUMLAH ORANG -->
+        <div class="px-3 py-2 border-t md:border-t-0 md:border-l border-blue-800/60 flex flex-col justify-center">
+            <label for="jumlah-orang" class="text-[10px] text-blue-400 font-bold tracking-wider uppercase mb-1">Jumlah Orang</label>
+            <input id="jumlah-orang" type="number" placeholder="Contoh: 2" min="1" class="bg-transparent text-white text-base sm:text-sm focus:outline-none w-full font-medium placeholder-blue-300" />
+        </div>
+
+        <!-- TOMBOL CARI -->
+        <div class="p-1">
+            <button id="btn-cari-wa" type="button" onclick="kirimKeWhatsApp()" class="w-full bg-[#3b82f6] hover:bg-blue-600 text-white font-semibold py-3.5 px-6 rounded-2xl flex items-center justify-center gap-2 transition duration-300 shadow-lg text-center shadow-blue-500/20 text-base sm:text-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Cari Sekarang</span>
+            </button>
+        </div>
+
+    </div>
+</div>
         <!-- FLOATING BADGES -->
         
 
@@ -402,6 +401,48 @@
         }
     })();
     </script>
+    <!-- SCRIPT PENGIRIM PESAAN AUTOMATIS -->
+<script>
+    function kirimKeWhatsApp() {
+        const phoneNumber = "6285250377318";
+        
+        // Ambil data input
+        const layanan = document.getElementById('layanan-select').value;
+        const tanggal = document.getElementById('tanggal-input').value;
+        const jumlahOrang = document.getElementById('jumlah-orang').value;
+
+        // Validasi input sederhana
+        if (!layanan) {
+            alert("Silakan pilih layanan terlebih dahulu.");
+            return;
+        }
+        if (!tanggal) {
+            alert("Silakan tentukan tanggal trip.");
+            return;
+        }
+        if (!jumlahOrang || jumlahOrang <= 0) {
+            alert("Silakan isi jumlah orang dengan benar.");
+            return;
+        }
+
+        // Format tanggal agar lebih rapi (YYYY-MM-DD -> DD/MM/YYYY)
+        const [tahun, bulan, hari] = tanggal.split('-');
+        const tanggalFormatted = `${hari}/${bulan}/${tahun}`;
+
+        // Rakit pesan teks
+        const pesan = `Halo Bontang Marine Trip, saya ingin cek ketersediaan jadwal wisata:\n\n` +
+                      `📌 *Layanan:* ${layanan}\n` +
+                      `📅 *Tanggal:* ${tanggalFormatted}\n` +
+                      `👥 *Jumlah:* ${jumlahOrang} Orang\n\n` +
+                      `Mohon informasi ketersediaan slot dan instruksi selanjutnya. Terima kasih!`;
+
+        // Encode string ke format URL aman
+        const urlWA = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(pesan)}`;
+
+        // Buka tautan ke WhatsApp
+        window.open(urlWA, '_blank');
+    }
+</script>
 
 </body>
 </html>
